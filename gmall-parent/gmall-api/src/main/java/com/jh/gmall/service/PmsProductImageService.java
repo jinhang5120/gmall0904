@@ -18,4 +18,6 @@ public interface PmsProductImageService extends IService<PmsProductImage> {
     void saveProductImage(PmsProductImage pmsProductImage);
 
     List<PmsProductImage> spuImageList(int spuId);
+
+    PmsProductImage selectOne(PmsProductImage pmsProductImage);
 }

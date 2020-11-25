@@ -1,7 +1,12 @@
 package com.jh.gmall.service;
 
+import com.jh.gmall.entity.OmsCartItem;
+import com.jh.gmall.entity.OmsOrderItem;
 import com.jh.gmall.entity.PmsSkuInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +18,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface PmsSkuInfoService extends IService<PmsSkuInfo> {
 
+    Long saveSkuInfo(PmsSkuInfo pmsSkuInfo);
+
+    PmsSkuInfo selectOne(Long skuId, String remoteAddr);
+
+    List<PmsSkuInfo> selectListByProductId(Long productId);
+
+    List<PmsSkuInfo> selectAll();
+
+    boolean checkPrice(Long productSkuId, BigDecimal productPrice);
 }

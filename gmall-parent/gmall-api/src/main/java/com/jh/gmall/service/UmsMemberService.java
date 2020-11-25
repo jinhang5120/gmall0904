@@ -13,4 +13,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UmsMemberService extends IService<UmsMember> {
     public UmsMember add(int i);
+
+    UmsMember login(UmsMember umsMember);
+
+    void addUserToken(String token, Long id);
+
+    UmsMember selectById(Long memberId);
 }

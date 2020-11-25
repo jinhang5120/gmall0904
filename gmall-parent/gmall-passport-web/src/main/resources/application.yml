@@ -1,0 +1,24 @@
+server:
+  port: 8086
+dubbo:
+  application:
+    name:  passport-web
+  registry:
+    address: 10.27.100.113:2181
+    protocol: zookeeper
+    check: false
+  monitor:
+    protocol: register
+  consumer:
+    check:  false
+    timeout: 3000
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/gmall_study?characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false  #关闭thymeleaf的缓存，热部署
+    mode: LEGACYHTML5 #松校验，避免html页面的href链接字符串过于复杂而报错

@@ -32,4 +32,9 @@ public class PmsProductImageServiceImpl extends ServiceImpl<PmsProductImageMappe
     public List<PmsProductImage> spuImageList(int spuId) {
         return pmsProductImageMapper.selectList(new QueryWrapper<PmsProductImage>().eq("product_id",spuId));
     }
+
+    @Override
+    public PmsProductImage selectOne(PmsProductImage pmsProductImage) {
+        return pmsProductImageMapper.selectOne(new QueryWrapper<PmsProductImage>().setEntity(pmsProductImage));
+    }
 }

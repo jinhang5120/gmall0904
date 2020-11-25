@@ -1,9 +1,9 @@
 package com.jh.gmall.service;
 
-import com.jh.gmall.entity.PmsBaseAttrInfo;
 import com.jh.gmall.entity.PmsBaseAttrValue;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -18,5 +18,9 @@ public interface PmsBaseAttrValueService extends IService<PmsBaseAttrValue> {
 
     int createAttrValue(List<PmsBaseAttrValue> attrValueList, Long id);
 
-    List<PmsBaseAttrValue> getAttrValueList(int attrId);
+    List<PmsBaseAttrValue> getAttrValueList(Long attrId);
+
+    List<PmsBaseAttrValue> selectListBySet(HashSet<Long> valueIdSet);
+
+    PmsBaseAttrValue getValueNameById(Long valueId);
 }

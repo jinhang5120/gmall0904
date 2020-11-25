@@ -33,7 +33,11 @@ public class PmsBaseAttrInfoController {
     @RequestMapping("/attrInfoList")//前端请求：http://127.0.0.1:8081/attrInfoList?catalog3Id=1
     @ResponseBody
     public List<PmsBaseAttrInfo> attrInfoList(int catalog3Id){
-        return pmsBaseAttrInfoService.attrInfoList(catalog3Id);
+        List<PmsBaseAttrInfo> list = pmsBaseAttrInfoService.attrInfoList(catalog3Id);
+        for (PmsBaseAttrInfo pmsBaseAttrInfo : list) {
+            pmsBaseAttrInfo.setAttrValueList(pmsBaseAttrValueService.getAttrValueList(pmsBaseAttrInfo.getId()));
+        }
+        return list;
     }
     @RequestMapping("/saveAttrInfo")//前端请求http://127.0.0.1:8081/saveAttrInfo
     @ResponseBody

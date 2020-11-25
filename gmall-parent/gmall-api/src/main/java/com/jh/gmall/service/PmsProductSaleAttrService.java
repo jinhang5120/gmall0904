@@ -17,5 +17,7 @@ public interface PmsProductSaleAttrService extends IService<PmsProductSaleAttr> 
 
     PmsProductSaleAttr saveProductSaleAttr(PmsProductSaleAttr pmsProductSaleAttr);
 
-    List<PmsProductSaleAttr> spuSaleAttrList(int spuId);
+    List<PmsProductSaleAttr> spuSaleAttrList(Long spuId);
+
+    List<PmsProductSaleAttr> selectListByProductId(Long productId);
 }

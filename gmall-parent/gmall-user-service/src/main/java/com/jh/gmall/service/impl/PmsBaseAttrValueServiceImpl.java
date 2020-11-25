@@ -2,14 +2,15 @@ package com.jh.gmall.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.jh.gmall.entity.PmsBaseAttrInfo;
 import com.jh.gmall.entity.PmsBaseAttrValue;
 import com.jh.gmall.mapper.PmsBaseAttrValueMapper;
 import com.jh.gmall.service.PmsBaseAttrValueService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -40,9 +41,24 @@ public class PmsBaseAttrValueServiceImpl extends ServiceImpl<PmsBaseAttrValueMap
     }
 
     @Override
-    public List<PmsBaseAttrValue> getAttrValueList(int attrId) {
+    public List<PmsBaseAttrValue> getAttrValueList(Long attrId) {
         HashMap<String, Object> map = new HashMap<>();
         map.put("attr_id",attrId);
+        System.out.println("pmsBaseAttrValueMapper.selectByMap(map) = " + pmsBaseAttrValueMapper.selectByMap(map));
         return pmsBaseAttrValueMapper.selectByMap(map);
+    }
+
+    @Override
+    public List<PmsBaseAttrValue> selectListBySet(HashSet<Long> valueIdSet) {
+        List<PmsBaseAttrValue> pmsBaseAttrValueList = new ArrayList<>();
+        for (Long valueId : valueIdSet) {
+            pmsBaseAttrValueList.add(pmsBaseAttrValueMapper.selectById(valueId));
+        }
+        return pmsBaseAttrValueList;
+    }
+
+    @Override
+    public PmsBaseAttrValue getValueNameById(Long valueId) {
+        return pmsBaseAttrValueMapper.selectById(valueId);
     }
 }

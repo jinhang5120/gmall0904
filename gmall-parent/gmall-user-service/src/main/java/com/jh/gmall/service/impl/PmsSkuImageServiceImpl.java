@@ -1,10 +1,14 @@
 package com.jh.gmall.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jh.gmall.entity.PmsSkuImage;
 import com.jh.gmall.mapper.PmsSkuImageMapper;
 import com.jh.gmall.service.PmsSkuImageService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +20,15 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PmsSkuImageServiceImpl extends ServiceImpl<PmsSkuImageMapper, PmsSkuImage> implements PmsSkuImageService {
+    @Autowired
+    PmsSkuImageMapper pmsSkuImageMapper;
+    @Override
+    public void insertSkuImage(PmsSkuImage pmsSkuImage) {
+        System.out.println("pmsSkuImageMapper.insert(pmsSkuImage) = " + pmsSkuImageMapper.insert(pmsSkuImage));
+    }
 
+    @Override
+    public List<PmsSkuImage> selectList(Long skuId) {
+        return pmsSkuImageMapper.selectList(new QueryWrapper<PmsSkuImage>().eq("sku_id",skuId));
+    }
 }

@@ -41,5 +41,5 @@ public class PmsProductSaleAttrValue implements Serializable {
      */
     private String saleAttrValueName;
 
-
+    private transient Boolean isChecked = false;
 }

@@ -1,13 +1,13 @@
 dubbo:
   application:
-    name: dubbo-provider
+    name: user-service
   registry:
     address: 10.27.100.113:2181
     protocol: zookeeper
     check: false
   protocol:
     name: dubbo
-    port: 20880
+    port: 20881
   monitor:
     protocol: register
   consumer:
@@ -19,7 +19,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://10.27.100.171:3306/gmall_study?characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/gmall_study?characterEncoding=UTF-8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
 server:
   port: 8082

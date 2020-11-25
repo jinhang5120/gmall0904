@@ -110,5 +110,7 @@ public class OmsCartItem implements Serializable {
      */
     private String productAttr;
 
+    private Integer isChecked;
 
+    private transient BigDecimal totalPrice;
 }

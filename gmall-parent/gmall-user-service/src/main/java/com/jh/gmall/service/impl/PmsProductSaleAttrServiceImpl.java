@@ -34,11 +34,12 @@ public class PmsProductSaleAttrServiceImpl extends ServiceImpl<PmsProductSaleAtt
     }
 
     @Override
-    public List<PmsProductSaleAttr> spuSaleAttrList(int spuId) {
-        List<PmsProductSaleAttr> list = pmsProductSaleAttrMapper.selectList(new QueryWrapper<PmsProductSaleAttr>().eq("product_id", spuId));
-        for (PmsProductSaleAttr pmsProductSaleAttr : list) {
-            pmsProductSaleAttr.setSpuSaleAttrValueList(pmsProductSaleAttrValueMapper.selectList(new QueryWrapper<PmsProductSaleAttrValue>().eq("product_id",spuId)));
-        }
-        return list;
+    public List<PmsProductSaleAttr> spuSaleAttrList(Long spuId) {
+        return pmsProductSaleAttrMapper.selectList(new QueryWrapper<PmsProductSaleAttr>().eq("product_id", spuId));
+    }
+
+    @Override
+    public List<PmsProductSaleAttr> selectListByProductId(Long productId) {
+        return pmsProductSaleAttrMapper.selectList(new QueryWrapper<PmsProductSaleAttr>().eq("product_id",productId));
     }
 }

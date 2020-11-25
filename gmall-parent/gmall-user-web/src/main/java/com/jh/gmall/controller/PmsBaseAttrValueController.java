@@ -27,7 +27,7 @@ public class PmsBaseAttrValueController {
     PmsBaseAttrValueService pmsBaseAttrValueService;
     @RequestMapping("/getAttrValueList") //前端请求地址：http://127.0.0.1:8081/getAttrValueList?attrId=12
     @ResponseBody
-    public List<PmsBaseAttrValue> getAttrValueList(int attrId){
+    public List<PmsBaseAttrValue> getAttrValueList(Long attrId){
         return pmsBaseAttrValueService.getAttrValueList(attrId);
     }
 }

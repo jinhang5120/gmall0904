@@ -1,6 +1,7 @@
 package com.jh.gmall.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jh.gmall.entity.PmsBaseSaleAttr;
 import com.jh.gmall.mapper.PmsBaseSaleAttrMapper;
 import com.jh.gmall.service.PmsBaseSaleAttrService;
@@ -24,5 +25,10 @@ public class PmsBaseSaleAttrServiceImpl extends ServiceImpl<PmsBaseSaleAttrMappe
     @Override
     public List<PmsBaseSaleAttr> baseSaleAttrList() {
         return pmsBaseSaleAttrMapper.selectList(null);
+    }
+
+    @Override
+    public String selectSaleAttrName(Long saleAttrId) {
+        return pmsBaseSaleAttrMapper.selectOne(new QueryWrapper<PmsBaseSaleAttr>().eq("id",saleAttrId)).getName();
     }
 }

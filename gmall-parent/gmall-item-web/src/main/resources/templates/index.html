@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>cccccc</h1>
+    <br>
+    <h1>abc</h1>
+
+    <a href="javascript:f('abcd')">href</a>
+    <a th:href="'javascript:f(\'' +${key1}+ '\')'">th:href</a>
+
+    <div th:include="indexinner::fragment1"></div>
+</body>
+
+<script language="JavaScript">
+    function f(para) {
+        alert(para)
+    }
+</script>
+</html>
+

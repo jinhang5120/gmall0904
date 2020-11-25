@@ -12,7 +12,38 @@
     <artifactId>gmall-api</artifactId>
 
     <dependencies>
-    <!--    <dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>5.15.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
@@ -28,18 +59,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
--->
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
-        </dependency>
-       <!-- <dependency>
+        </dependency>-->
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -50,7 +80,7 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
@@ -61,29 +91,29 @@
             <artifactId>zkclient</artifactId>
         </dependency>
 
-        <dependency>&lt;!&ndash;Thymeleaf 前端渲染框架&ndash;&gt;
+        <dependency><!--Thymeleaf 前端渲染框架-->
             <groupId>net.sourceforge.nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
         </dependency>
 
-        <dependency>&lt;!&ndash;Thymeleaf 前端渲染框架&ndash;&gt;
+        <dependency><!--Thymeleaf 前端渲染框架-->
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
         </dependency>
 
-        <dependency>&lt;!&ndash;Thymeleaf 前端渲染框架&ndash;&gt;
+        <dependency><!--Thymeleaf 前端渲染框架-->
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>batik-ext</artifactId>
         </dependency>
 
-        &lt;!&ndash; https://mvnrepository.com/artifact/org.jsoup/jsoup &ndash;&gt;
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
         </dependency>
 
-        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient &ndash;&gt;
-        <dependency>&lt;!&ndash;java中用来发送http请求，类似于浏览器，调短信接口&ndash;&gt;
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency><!--java中用来发送http请求，类似于浏览器，调短信接口-->
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
@@ -92,7 +122,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
--->
 
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -107,18 +136,23 @@
             <artifactId>velocity-engine-core</artifactId>
         </dependency>
 
-       <!-- <dependency>
+        <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.10.5</version>
+        </dependency>
 
-        &lt;!&ndash; https://mvnrepository.com/artifact/io.searchbox/jest &ndash;&gt;
+        <!-- https://mvnrepository.com/artifact/io.searchbox/jest -->
         <dependency>
             <groupId>io.searchbox</groupId>
             <artifactId>jest</artifactId>
         </dependency>
 
-        &lt;!&ndash; https://mvnrepository.com/artifact/net.java.dev.jna/jna &ndash;&gt;
+        <!-- https://mvnrepository.com/artifact/net.java.dev.jna/jna -->
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna</artifactId>
@@ -128,7 +162,6 @@
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
         </dependency>
--->
 
     </dependencies>
 

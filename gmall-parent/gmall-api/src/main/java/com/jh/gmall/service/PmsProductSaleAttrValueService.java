@@ -3,6 +3,8 @@ package com.jh.gmall.service;
 import com.jh.gmall.entity.PmsProductSaleAttrValue;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  * spu销售属性值 服务类
@@ -14,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface PmsProductSaleAttrValueService extends IService<PmsProductSaleAttrValue> {
 
     void saveProductSaleAttrValue(PmsProductSaleAttrValue pmsProductSaleAttrValue);
+
+    List<PmsProductSaleAttrValue> getProductSaleAttrValueList(Long spuId, Long saleAttrId);
 }

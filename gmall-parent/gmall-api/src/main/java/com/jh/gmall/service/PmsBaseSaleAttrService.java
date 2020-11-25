@@ -16,4 +16,6 @@ import java.util.List;
 public interface PmsBaseSaleAttrService extends IService<PmsBaseSaleAttr> {
 
     List<PmsBaseSaleAttr> baseSaleAttrList();
+
+    String selectSaleAttrName(Long saleAttrId);
 }

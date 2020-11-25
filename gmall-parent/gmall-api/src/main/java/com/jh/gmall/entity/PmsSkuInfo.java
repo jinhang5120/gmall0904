@@ -3,6 +3,8 @@ package com.jh.gmall.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.util.List;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -63,5 +65,7 @@ public class PmsSkuInfo implements Serializable {
      */
     private String skuDefaultImg;
 
-
+    private transient List<PmsSkuAttrValue> skuAttrValueList;
+    private transient List<PmsSkuSaleAttrValue> skuSaleAttrValueList;
+    private transient List<PmsSkuImage> skuImageList;
 }

@@ -111,5 +111,8 @@ public class UmsMember implements Serializable {
      */
     private Integer historyIntegration;
 
+    private String accessToken;
 
+    private String accessCode;
+    private Long sourceUid;
 }

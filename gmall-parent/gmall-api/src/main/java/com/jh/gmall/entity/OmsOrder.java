@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.util.List;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -237,5 +239,6 @@ public class OmsOrder implements Serializable {
      */
     private Date modifyTime;
 
-
+    private transient String tradeCode;
+    private transient List<OmsOrderItem> omsOrderItems;
 }
